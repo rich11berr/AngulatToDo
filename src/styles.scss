@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Comfortaa", sans-serif;
+}
+
+.button {
+  background-color: rgba(54, 56, 62, 0.2);
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  padding: 0.5rem 1.3rem;
+
+  outline: none;
+
+  border: none;
+
+  border-radius: 22px;
+
+  transition: all ease-in-out 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(1.1);
+  }
+}
+
+.input {
+  outline: none;
+  border: none;
+
+  font-size: 20px;
+  font-weight: 500;
+
+  padding: 0.5rem 1.2rem;
+
+  border-bottom: 1px solid rgb(44, 44, 44);
+
+  background-color: transparent;
+}
