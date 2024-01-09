@@ -27,16 +27,25 @@
       <app-item-not-started
         [todoItem]="item"
         [index]="i"
+        (eventChangeDescription)="handleChangeItemDescription($event)"
+        (changeStatus)="handleChangeStatus($event)"
+        (deleteItem)="handleDeleteItem($event)"
         *ngSwitchCase="'not_started'"
       ></app-item-not-started>
       <app-item-in-progress
         [todoItem]="item"
         [index]="i"
+        (eventChangeDescription)="handleChangeItemDescription($event)"
+        (changeStatus)="handleChangeStatus($event)"
+        (deleteItem)="handleDeleteItem($event)"
         *ngSwitchCase="'in_progress'"
       ></app-item-in-progress>
       <app-item-done
         [todoItem]="item"
         [index]="i"
+        (eventChangeDescription)="handleChangeItemDescription($event)"
+        (changeStatus)="handleChangeStatus($event)"
+        (deleteItem)="handleDeleteItem($event)"
         *ngSwitchCase="'done'"
       ></app-item-done>
     </ng-container>

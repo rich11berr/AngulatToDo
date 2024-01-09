@@ -57,4 +57,16 @@ export class AppComponent {
     this.todoGroups[value.index].items.push(value.item);
   }
 
+  public handleChangeDescription(value: { description: string, indexGroup: number, indexItem: number }) {
+    this.todoGroups[value.indexGroup].items[value.indexItem].description = value.description;
+  }
+
+  public handleChangeStatus(value: { status: ToDoStatus, indexItem: number, groupIndex: number }): void {
+    this.todoGroups[value.groupIndex].items[value.indexItem].status = value.status;
+  }
+
+  public handleDeleteItem(value: { indexItem: number, indexGroup: number }): void {
+    this.todoGroups[value.indexGroup].items.splice(value.indexItem, 1);
+  }
+
 }

@@ -1,16 +1,53 @@
 .item {
+  position: relative;
   display: flex;
+  flex-direction: column;
   gap: 15px;
 
-  align-items: center;
-
-  height: 65px;
+  height: fit-content;
   width: 410px;
   border-radius: 22px;
 
   -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+
+  &__header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: left;
+    padding-top: 5px;
+  }
+
+  &__description {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    div {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__hide {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+
+    transition: transform ease-in-out 0.3s;
+
+    transform: rotate(90deg);
+  }
+
+  &__alt-hide {
+    transform: rotate(-90deg);
+  }
 
   &__title {
     font-size: 23px;
@@ -21,6 +58,6 @@
   }
 
   &__img {
-    padding-left: 20px;
+    padding-left: 10px;
   }
 }

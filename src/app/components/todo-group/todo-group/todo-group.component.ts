@@ -26,6 +26,12 @@ export class TodoGroupComponent implements OnInit {
 
   @Output() addNewItem = new EventEmitter<{ item: TodoItem, index: number }>();
 
+  @Output() changeDescription = new EventEmitter<{ description: string, indexGroup: number, indexItem: number }>();
+
+  @Output() changeItemStatus = new EventEmitter<{ status: ToDoStatus, indexItem: number, groupIndex: number }>()
+
+  @Output() deleteItem = new EventEmitter<{ indexItem: number, indexGroup: number }>()
+
   public isShowTitle = true;
 
   public groupTitle?: string;
@@ -60,5 +66,17 @@ export class TodoGroupComponent implements OnInit {
       },
       index: this.index
     })
+  }
+
+  public handleChangeItemDescription(value: { description: string, index: number }): void {
+    this.changeDescription.emit({ description: value.description, indexGroup: this.index, indexItem: value.index });
+  }
+
+  public handleChangeStatus(value: { status: ToDoStatus, index: number }): void {
+    this.changeItemStatus.emit({ status: value.status, indexItem: value.index, groupIndex: this.index });
+  }
+
+  public handleDeleteItem(value: number) {
+    this.deleteItem.emit({ indexItem: value, indexGroup: this.index })
   }
 }
